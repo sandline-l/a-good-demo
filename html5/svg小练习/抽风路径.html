@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>抽风路径</title>
+    <style>
+        svg{
+            border: 1px solid #000
+        }
+        path{
+            stroke: #000;
+            fill: transparent;
+            stroke-width: 10;
+            stroke-dasharray: 500px;
+            stroke-dashoffset: 0px;
+            animation: move 1s linear alternate infinite;
+        }
+        @keyframes move{
+            0%{
+                stroke-dashoffset:0px;
+            }
+            100%{
+                stroke-dashoffset:500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg width="500px" height="500px">
+        <path d="m 0 100 L 500 100"/>
+        
+    </svg>
+</body>
+</html>
+

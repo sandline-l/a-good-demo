@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>直线</title>
+    <style>
+        svg {
+            border: 1px solid #000
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="500px" height="500px">
+        <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="100%">
+                <stop offset="0%" style="stop-color:rgb(255,255,0);" />
+                <stop offset="100%" style="stop-color:rgb(255,0,0);" />
+            </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="250" height="250" style="fill:url(#bg1)" />
+        <defs>
+            <radialGradient id="bg2" cx="25%" cy="75%" r="50%" fx="25%" fy="75%">
+                <stop offset="0%" style="stop-color:green;" />
+                <stop offset="100%" style="stop-color:red;" />
+            </radialGradient>
+        </defs>
+        <rect x="250" y="250" width="250" height="250" style="fill:url(#bg2)" />
+
+    </svg>
+</body>
+
+</html>

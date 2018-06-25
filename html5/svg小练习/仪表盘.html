@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仪表盘</title>
+    <style>
+       
+
+        #path1 {
+            stroke: rgb(95, 94, 94);
+            fill: transparent;
+            stroke-width: 10px;
+
+        }
+
+        #path2 {
+            stroke: rgb(56, 197, 178);
+            fill: transparent;
+            stroke-width: 10px;
+            stroke-dasharray: 1000px;
+            stroke-dashoffset: -1000px;
+        }
+
+        #btn {
+            display: inline-block;
+            /* text-align: center; */
+            margin-left: 100px;
+            width: 300px;
+            height: 50px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        .wrapper{
+            width: 500px;
+            margin: 50px auto;
+        }
+        h3{
+            text-align: right;
+        }
+        /* .active{
+            stroke-dashoffset: 
+            animation: move 2s linear;
+        } */
+
+        /* @keyframes move{
+            to{
+                stroke-dashoffset: -1000;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>仪表盘样式</h2>
+        <h3>请输入0到100之间的数</h3>
+        <input type="text" id="btn">
+        <svg id="svg" width="500px" height="500px">
+            <path id="path1" d="M 200 200 A 100 100 0 1 1 300 200" />
+            <path id="path2" d="M 200 200 A 100 100 0 1 1 300 200" />
+        </svg>
+    </div>
+
+    <script>
+        var len = path2.getTotalLength();
+        btn.addEventListener('blur', function () {
+            var value = btn.value,
+                val;
+            // path2.addClassName='active';
+            if(value>100){
+                value=100;
+            }
+            val = len * value / 100;
+            path2.style.strokeDashoffset = -1000 - val + "px";
+            path2.style.transition = "all 1s linear";
+        }, false)
+        btn.addEventListener('focus', function () {
+            btn.value = "";
+            path2.style.strokeDashoffset = -1000 + "px";
+            path2.style.transition = "none";
+        }, false)
+    </script>
+</body>
+
+</html>

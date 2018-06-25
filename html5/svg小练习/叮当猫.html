@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>直线</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+        }
+        svg {
+            border: 1px solid #000
+        }
+
+        /* path {
+            stroke: #000;
+            fill: transparent;
+            stroke-width: 10;
+        } */
+
+        .head {
+            stroke: #000;
+            fill: rgb(37, 96, 223);
+        }
+        .face{
+            stroke: #000;
+            fill: #fff;
+        }
+        ellipse:nth-of-type(1){
+            stroke: #000;
+            fill: #fff;
+        }
+        ellipse:nth-of-type(2){
+            stroke: #000;
+            fill: #fff;
+        }
+        circle{
+            fill: #f00;
+        }
+        ellipse:nth-of-type(5){
+            fill: #fff;
+        }
+        line{
+            stroke: #000;
+        }
+        .mouse{
+            fill: transparent;
+            stroke: #000;
+        }
+        .mousel{
+            stroke: #000;
+        }
+        line:nth-of-type(2){
+            stroke: #f00;
+            stroke-width: 10;
+            stroke-linecap: round;
+        }
+        circle:nth-of-type(2){
+            fill: rgb(224, 228, 13);
+            stroke: #000;
+        }
+        polygon{
+            fill: rgb(37, 96, 223);
+            stroke: #000;
+        }
+        rect{
+            fill: rgb(37, 96, 223);
+            stroke: #000;
+        }
+        path:nth-of-type(10){
+            fill: #fff;
+            stroke: #000;
+        }
+        path:nth-of-type(11){
+            fill: #fff;
+            stroke: #000;
+        }
+        circle:nth-of-type(3){
+            fill: #000;
+            stroke: #000;
+        }
+        .hand{
+            fill: #fff;
+            stroke: #000;
+        }
+        .food{
+            fill: #fff;
+            stroke: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <svg width="500px" height="500px">
+            <!-- 蓝头 -->
+            <path class="head" d="m 200 200 A 100 100 0 1 1 300 200" />
+            <!-- 白脸 -->
+            <path class="face" d="m 220 200 A 80 60 0 1 1 280 200" />
+            <!-- 两个眼睛 -->
+            <ellipse rx="20" ry="30" cx="230" cy="80"></ellipse>
+            <ellipse rx="20" ry="30" cx="270" cy="80"></ellipse>
+            <ellipse rx="4" ry="8" cx="235" cy="85"></ellipse>
+            <ellipse rx="4" ry="8" cx="265" cy="85"></ellipse>
+            <!-- 鼻子 -->
+            <circle r="9" cx="250" cy="110"></circle>
+            <ellipse rx="3" ry="4" cx="255" cy="108"></ellipse>
+            <!-- 嘴巴 -->
+            <line x1="250" y1="119" x2="250" y2="173"></line>
+            <path class="mouse" d="m 200 160 A 80 60 0 0 0 300 160" />
+            <!-- 胡须 -->
+            <path class="mouse" d="m 235 125 l -45 -10" />
+            <path class="mouse" d="m 235 133 l -50 0" />
+            <path class="mouse" d="m 235 141 l -45 10" />
+            <path class="mouse" d="m 265 125 l 45 -10" />
+            <path class="mouse" d="m 265 133 l 50 0" />
+            <path class="mouse" d="m 265 141 l 45 10" />
+            <!-- 项圈 -->
+            <line x1="200" y1="205" x2="300" y2="205"></line>
+           
+            <!-- 身子 -->
+            <polygon points="200 210, 150 200, 145 220, 200 230"></polygon>
+            <polygon points="300 210, 355 220, 350 240,300 230"></polygon>
+            <rect x="200" y="210" width="100" height="80"></rect>
+           
+            <!-- 肚子 -->
+             <path  d="m 220 210 A 35 35 0 1 0 280 210" />
+             <path  d="m 230 233 A 15 15 0 1 0 270 233 z" />
+            <!-- 铃铛 -->
+            <circle r="11" cx="250" cy="215"></circle>
+            <line x1="240" y1="210" x2="260" y2="210"></line>
+            <line x1="239" y1="212" x2="261" y2="212"></line>
+            <circle r="4" cx="250" cy="220"></circle>
+            <line x1="250" y1="220" x2="250" y2="226"></line>
+            <!-- 手 -->
+            <circle class="hand" r="15" cx="145" cy="210"></circle>
+            <circle class="hand" r="15" cx="355" cy="230"></circle>
+            <!-- 脚 -->
+            <ellipse class="food" rx="30" ry="12" cx="215" cy="290"></ellipse>
+            <ellipse class="food" rx="30" ry="12" cx="285" cy="290"></ellipse>
+
+
+        </svg>
+    </div>
+
+</body>
+
+</html>

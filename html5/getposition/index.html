@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>地理位置</title>
+</head>
+<body>
+
+    <script>
+       var last_latitude=0,
+            last_longitude=0;
+        // 该回调函数中会传入一个参数，position,他是一个对象，包含了一些地理位置信息
+        function success(pos){
+            console.log(pos);
+            console.log(pos.coords.latitude);
+        }
+        function error(pos){
+            console.log("你没有获取到位置信息");
+            console.log(pos);
+        }
+        var options={
+            enableHighAccuracy:true,
+            timeout:1000,
+            // 设置地理位置信息缓存时间，默认为0，如果在缓存时间内，watchPosition会直接从缓存中获取信息
+            maximumAge:500,
+
+        };
+          // 获取地理位置，成功之后执行success回调函数，
+          navigator.geolocation.getCurrentPosition(success,error,options);
+
+        function suc(pos){
+            var arr=pos.coords;
+            var str='';
+            if(arr.latitude!=last_latitude || arr.longitude!=last_longitude){
+                console.log(arr.latitude+', '+arr.longitude);
+                str+=arr.latitude+" ,"+arr.longitude;
+               var p= document.createElement('p');
+                p.innerHTML=str;
+                document.body.appendChild(p);
+            }
+            last_latitude=arr.latitude;
+            last_longitude=arr.longitude;
+            // console.log(arr.latitude);
+        }
+        navigator.geolocation.watchPosition(suc);
+    </script>
+</body>
+</html>
